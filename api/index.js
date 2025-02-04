@@ -16,7 +16,7 @@ mongoose.connect(process.env.MONGO)
 
 const app = express();
 app.use(express.json())
-
+app.use(express.urlencoded({ extended: true })); 
 
 app.listen(3000, () => {
     console.log('server is running on port 3000!!');
