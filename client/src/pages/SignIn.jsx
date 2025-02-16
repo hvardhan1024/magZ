@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { signInStart,signInSuccess,signInFailure } from '../redux/user/userSlice'
 import { useDispatch,useSelector } from 'react-redux'
+import OAuth from '../components/OAuth'
 
 function SignIn() {
   const [formData,setFormData] = useState({})
@@ -72,9 +73,10 @@ function SignIn() {
             </div>
             <Button gradientDuoTone='purpleToPink' className='w-100 mt-3' type='submit' disabled={loading}> 
                 {
-                  loading? <><Spinner size='sm' /> <span className='pl-3'> Loading... </span> </>: 'Sign Up'
+                  loading? <><Spinner size='sm' /> <span className='pl-3'> Loading... </span> </>: 'Sign In'
                 }
                </Button>
+               <OAuth />
           </form>
 
           <div className='flex gap-2 text-sm mt-5'>
